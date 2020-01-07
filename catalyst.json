@@ -1,0 +1,12 @@
+{
+  "client": {
+    "source": "client"
+  },
+  "applogic": {
+    "targets": [
+      "chuck_norris_jokes"
+    ],
+    "ignore": [],
+    "source": "applogic"
+  }
+}
