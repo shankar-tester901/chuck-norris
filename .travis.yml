@@ -1,5 +1,22 @@
-language: node_js
 notifications:
   email:
     - shankar.tester901@gmail.com
-stages: unit tests    
+language: node_js
+node_js:
+  - 8
+install:
+  - npm install -g zcatalyst-cli
+jobs:
+  include:
+    - stage: unit tests
+      before_script:
+        - echo 'applogic testing!!'
+        - cd applogic/chuck_norris_jokes
+      script:
+        - echo 'Installing Deps!'
+        - npm install
+        - echo 'Testing using mocha chai'
+      after_success:
+        - echo 'deploying!!!'
+        - catalyst deploy --project <project>
+      
