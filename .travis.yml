@@ -1,6 +1,9 @@
-notifications:
-  email:
+notifications:  
+  email:  
+    recipients:  
     - shankar.tester901@gmail.com
+    on_success: never  
+    on_failure: always
 language: node_js
 node_js:
   - 8
@@ -20,4 +23,5 @@ jobs:
       after_success:
         - echo 'deploying!!!'
         - catalyst deploy --project 1788000000011017
-      
+      after_failure:
+        - echo 'Test failed'
